@@ -4,6 +4,8 @@ services:
     container_name: windows
     environment:
       VERSION: "11"
+      RAM_SIZE: "8G"
+      CPU_CORES: "4"
     devices:
       - /dev/kvm
     cap_add:
@@ -14,4 +16,5 @@ services:
       - 3389:3389/udp
     stop_grace_period: 2m
     volumes:
-      - /home/igor/projects/windows:/data
+      - /home/igor/Projects/windows:/data
+      - /home/igor/Projects/windows/win:/storage
